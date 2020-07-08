@@ -1,0 +1,31 @@
+## to list the Google config list
+gcloud config list
+[core]
+account = 283741422125-compute@developer.gserviceaccount.com
+disable_usage_reporting = True
+project = understandin-24-4a66c5
+
+## to list the bucket names from the VM
+gsutil ls gs://understandin-24-4a66c5-scope-lab
+gs://understandin-24-4a66c5-scope-lab/Screen Shot 2020-06-27 at 11.14.36 AM.png
+gs://understandin-24-4a66c5-scope-lab/Screen Shot 2020-06-27 at 11.16.59 AM.png
+gs://understandin-24-4a66c5-scope-lab/Screen Shot 2020-06-28 at 7.06.11 PM.png
+
+##to download the content use the following command from gshell
+cloudshell dl cloud-functions-lab/*
+
+## creating a new bucket using cloud shell
+gsutil mb -c regional -l us-central1 gs://prasad-new337
+Creating gs://prasad-new337/...
+
+##changing the permission on the file (making it public)
+gsutil acl ch -u AllUsers:R gs://prasad-new337/main.py
+Updated ACL on gs://prasad-new337/main.py
+
+## to copy the object from one bucket to another bucket use
+gsutil cp gs://prasad-new337/main.py gs://understandin-24
+
+## how to set a lifecycle for cloud shell
+gsutil lifecycle set delete-after-two-years.json gs://prasad-4414
+Setting lifecycle configuration on gs://prasad-4414/...
+
