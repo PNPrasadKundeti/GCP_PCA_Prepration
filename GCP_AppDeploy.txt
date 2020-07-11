@@ -1,0 +1,8 @@
+git clone  https://github.com/GoogleCloudPlatformTraining/cp100-bookshelf
+cd ~/cp100-bookshelf/app-engine
+pip install -r requirements.txt -t lib
+gcloud app deploy
+
+##once the app is deployed go to Operations --> Trace --> you can see the Insights / recent transactions 
+
+## Error Reporting helps to navigate to file where you are having the problem 

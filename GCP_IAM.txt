@@ -1,0 +1,8 @@
+Retrieve IAM policy and download in YAML format:
+gcloud projects get-iam-policy (PROJECT_ID) > (filename).yaml
+
+Update IAM policy from updated file:
+gcloud projects set-iam-policy PROJECT_ID (filename).yaml
+
+Add single binding without downloading file
+gcloud projects add-iam-policy-binding PROJECT_ID --member user:(user's email)--role roles/editor

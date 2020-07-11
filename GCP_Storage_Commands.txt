@@ -6,10 +6,17 @@ disable_usage_reporting = True
 project = understandin-24-4a66c5
 
 ## to list the bucket names from the VM
-gsutil ls gs://understandin-24-4a66c5-scope-lab
+gsutil ls gs://understandin-24-4a66c5-scope-lab  
 gs://understandin-24-4a66c5-scope-lab/Screen Shot 2020-06-27 at 11.14.36 AM.png
 gs://understandin-24-4a66c5-scope-lab/Screen Shot 2020-06-27 at 11.16.59 AM.png
 gs://understandin-24-4a66c5-scope-lab/Screen Shot 2020-06-28 at 7.06.11 PM.png
+
+##get the list of files with the version ids
+gsutil ls -a gs://object-versi-26-83252c-versioning-lab
+gs://object-versi-26-83252c-versioning-lab/README-cloudshell.txt#1594260881165819
+gs://object-versi-26-83252c-versioning-lab/Screen Shot 2020-06-28 at 8.25.52 PM.png#1594260777770147
+gs://object-versi-26-83252c-versioning-lab/newfile.txt#1594261473128191
+$ 
 
 ##to download the content use the following command from gshell
 cloudshell dl cloud-functions-lab/*
@@ -29,3 +36,26 @@ gsutil cp gs://prasad-new337/main.py gs://understandin-24
 gsutil lifecycle set delete-after-two-years.json gs://prasad-4414
 Setting lifecycle configuration on gs://prasad-4414/...
 
+## check if the version is enabled or not using the following commands
+gsutil versioning get gs://object-versi-26-83252c-versioning-lab
+gs://object-versi-26-83252c-versioning-lab: Suspended
+
+## enabling versioning on the bucket (by default it is disabled)
+gsutil versioning set on gs://object-versi-26-83252c-versioning-lab
+Enabling versioning for gs://object-versi-26-83252c-versioning-lab/...
+
+##enabling auto complete on the google cloud shell
+gcloud beta interactive
+
+## restoring the deleted version with the genration id
+gsutil mv gs://object-versi-26-83252c-versioning-lab/newfile.txt#1594261473128191 gs://object-versi-26-83252c-versioning-lab/newfile.txt
+Copying gs://object-versi-26-83252c-versioning-lab/newfile.txt#1594261473128191 [Content-Type=text/plain]...
+Removing gs://object-versi-26-83252c-versioning-lab/newfile.txt#1594261473128191...
+
+## how to set a label environment:test 
+gsutil label ch -l environment:test gs://prasad-jaffa-bucket-1231
+Setting label configuration on gs://prasad-jaffa-bucket-1231/...
+
+## how to configure requestor pay on the bucket
+gsutil requesterpays set on gs://prasad-jaffa-bucket-1231
+Enabling requester pays for gs://prasad-jaffa-bucket-1231/...
