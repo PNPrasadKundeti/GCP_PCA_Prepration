@@ -59,3 +59,19 @@ Setting label configuration on gs://prasad-jaffa-bucket-1231/...
 ## how to configure requestor pay on the bucket
 gsutil requesterpays set on gs://prasad-jaffa-bucket-1231
 Enabling requester pays for gs://prasad-jaffa-bucket-1231/...
+
+
+##gsutil references
+gsutil help <command> - gsutil help cp
+gsutil help options -help with top level commands line options
+
+##top-level command options (-m used for multi threading for copying the files )
+gsutil -m cp -r gs://<BUCKET> <target>
+
+## recursively and using multi thread removing buckets 
+gsutil -m rm -r gs://prasad-941*
+Removing gs://prasad-9419898/...
+Removing gs://prasad-9419898787/...
+Removing gs://prasad-9419898787wr/...
+Removing gs://prasad-9419898787wr234/...
+

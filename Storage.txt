@@ -1,0 +1,16 @@
+Storage:
+
+Storage Classes
+
+Performace is same for all classes, only difference in the regional/geo straoge
+Multi-Regional 
+Regional
+Nearline
+Coldline  --> retrival fee 
+Dual-regional bucket --> 100% replicated b/w 2 different regions
+
+Changing Storage Classes --> can be set on bucket or a object inside the bucket
+Nearline/Coldline can be regional or multi-regional classes
+cannot multi-regional to regional (vice versa)
+changing class effects only the new objects not the existing object
+obj can mov to another bucket

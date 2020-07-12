@@ -1,0 +1,37 @@
+gsutil command line working with cloudstorage bucket
+
+Cloud storage security concepts, cloud storage access is as "locked down" or "wide open" options
+
+Access Management Priciples 
+Two Methods: IAM and ACL
+
+Security via IAM
+Granted at Projected, resources or individual bucket (but cannot be on the objects)
+possible to grant access to manage bucket but not view/read objects inside.
+
+IAM Roles:
+primitive project levels roles (owner/editor/viewer)
+Standard storage Role (work independelty from ACLs)
+Storage Admin
+Storage Object Admin
+Storage Object Creator
+Storage Object viewer
+
+ACLs: 
+
+Signed URL: timed access to object data
+set a timer on access to bucket or object
+useful for temporarily giving access without need of signing 
+
+Customer-supplied encryption keys:
+
+default encryption using google supplied keys, but we can use customer supplied keys
+using a .boto configuration file used for customer supplied encryption keys
+
+Best Practices using Storage 
+always IAM roles, ACL's or Signed URL'security
+Remove application access when no longer needed
+Dont make bucket names a target (like gs://customer-ssn-no)
+check default obj ACL before adding objects
+publically writable buckets are a bad idea
+use signed URLs for secure access without need of google account for login
